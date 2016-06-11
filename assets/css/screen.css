@@ -2263,6 +2263,10 @@ body:not(.post-template) .post-title {
   display: none;
 }
 
+.popover img {
+  display: none;
+}
+
 .popover:hover .popover-wrapper,
 .popover:focus .popover-wrapper,
 .popover:active .popover-wrapper {
@@ -2276,6 +2280,12 @@ body:not(.post-template) .post-title {
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   z-index: 10;
+}
+
+.popover:hover img,
+.popover:focus img,
+.popover:active img {
+  display: inline;
 }
 
 .popover .popover-wrapper:before,
