@@ -2225,3 +2225,35 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+/* Customize */
+
+[class^="svg-icon"]:before,
+[class*=" svg-icon"]:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #bbc7cc;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  speak: none;
+  transition: background 0.3s ease;
+}
+
+.svg-icon-weibo {
+  -webkit-mask:  url(../imgs/weibo.svg) no-repeat center;
+  mask: url(../imgs/weibo.svg) no-repeat center;
+}
+
+.svg-icon-weixin {
+  -webkit-mask:  url(../imgs/weixin.svg) no-repeat center;
+  mask: url(../imgs/weixin.svg) no-repeat center;
+}
+
+.svg-icon-weibo:hover {
+  background-color: #e6162d;
+}
+
+.svg-icon-weixin:hover {
+  background-color: #44b549;
+}

@@ -58,13 +58,13 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}&pic={pic}&searchPic=false"
+                <a class="svg-icon-weibo" href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}&pic={{image absolute="true"}}&searchPic=false"
                     onclick="window.open(this.href, 'weibo-share', 'width=680,height=540');return false;">
                     <span class="hidden">Weibo 微博</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                <a class="svg-icon-weixin" href="http://qr.liantu.com/api.php?text={{url absolute="true"}}"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
+                    <span class="hidden">Weixin 微信</span>
                 </a>
                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
