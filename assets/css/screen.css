@@ -2234,26 +2234,24 @@ body:not(.post-template) .post-title {
   width: 20px;
   height: 20px;
   background-color: #bbc7cc;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  speak: none;
   transition: background 0.3s ease;
+  speak: none;
 }
 
-.svg-icon-weibo {
-  -webkit-mask:  url(../imgs/weibo.svg) no-repeat center;
-  mask: url(../imgs/weibo.svg) no-repeat center;
+.svg-icon-weibo:before {
+  -webkit-mask:  url(../imgs/weibo.svg) center/cover no-repeat;
+  mask: url(../imgs/weibo.svg) center/cover no-repeat;
 }
 
-.svg-icon-weixin {
-  -webkit-mask:  url(../imgs/weixin.svg) no-repeat center;
-  mask: url(../imgs/weixin.svg) no-repeat center;
+.svg-icon-weixin:before {
+  -webkit-mask:  url(../imgs/weixin.svg) center/cover no-repeat;
+  mask: url(../imgs/weixin.svg) center/cover no-repeat;
 }
 
-.svg-icon-weibo:hover {
+.svg-icon-weibo:hover:before {
   background-color: #e6162d;
 }
 
-.svg-icon-weixin:hover {
+.svg-icon-weixin:hover:before {
   background-color: #44b549;
 }
