@@ -2289,7 +2289,7 @@ body:not(.post-template) .post-title {
   border-width: 6px 6px 0 6px;
   border-color: #fff rgba(0, 0, 0, 0);
   border-style: solid;
-  z-index: 9;
+  z-index: 10;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
@@ -2298,7 +2298,7 @@ body:not(.post-template) .post-title {
   bottom: -7px;
   border-width: 7px 7px 0 7px;
   border-color: #bbc7cc rgba(0, 0, 0, 0);
-  z-index: 10;
+  z-index: 9;
 }
 
 .share-qrcode {
