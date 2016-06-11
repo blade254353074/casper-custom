@@ -62,9 +62,11 @@
                     onclick="window.open(this.href, 'weibo-share', 'width=680,height=540');return false;">
                     <span class="hidden">Weibo 微博</span>
                 </a>
-                <a class="svg-icon-weixin" href="http://qr.liantu.com/api.php?text={{url absolute="true"}}&el=l&w=100&m=0"
-                    onclick="window.open(this.href, 'weixin-share','width=580,height=296');return false;">
+                <a class="svg-icon-weixin popover">
                     <span class="hidden">Weixin 微信</span>
+                    <div class="popover-wrapper share-qrcode">
+                        <img src="http://qr.liantu.com/api.php?text={{url absolute="true"}}&el=l&w=200&m=0">
+                    </div>
                 </a>
                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">

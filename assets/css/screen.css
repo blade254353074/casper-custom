@@ -2257,3 +2257,50 @@ body:not(.post-template) .post-title {
 .svg-icon-weixin:hover:before {
   background-color: #44b549;
 }
+
+.popover .popover-wrapper {
+  display: none;
+}
+
+.popover:hover .popover-wrapper,
+.popover:focus .popover-wrapper,
+.popover:active .popover-wrapper {
+  position: absolute;
+  display: block;
+  top: -120px;
+  left: 50%;
+  background: #fff;
+  border: 1px solid #bbc7cc;
+  border-radius: 3px;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  z-index: 10;
+}
+
+.popover .popover-wrapper:before,
+.popover .popover-wrapper:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 0 8px;
+  border-color: #fff transparent;
+  z-index: 9;
+}
+
+.popover .popover-wrapper:after {
+  border-width: 9px 9px 0 9px;
+  border-color: #bbc7cc transparent;
+}
+
+.share-qrcode {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.share-qrcode img {
+  width: 100px;
+  height: 100px;
+}
