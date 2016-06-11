@@ -1260,6 +1260,7 @@ body:not(.post-template) .post-title {
     margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .post-footer .share .icon-twitter:hover {
