@@ -2231,9 +2231,11 @@ body:not(.post-template) .post-title {
 [class^="svg-icon"]:before,
 [class*=" svg-icon"]:before {
   content: '';
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
   background-color: #bbc7cc;
+  vertical-align: text-top;
   transition: background 0.3s ease;
   speak: none;
 }
