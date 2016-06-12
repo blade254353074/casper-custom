@@ -2316,3 +2316,13 @@ body:not(.post-template) .post-title {
   width: 100px;
   height: 100px;
 }
+
+/* 防爬虫 */
+.stop-spider {
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+}
