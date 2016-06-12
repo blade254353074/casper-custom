@@ -2383,7 +2383,7 @@ div.prism-show-language > div.prism-show-language-label {
     width: auto;
     height: auto;
     font-size: 0.9em;
-    border-radius: 0 0 0 5px;
+    border-radius: 0 3px 0 5px;
     padding: 0 0.5em;
     text-shadow: none;
     z-index: 1;
