@@ -2269,7 +2269,7 @@ body:not(.post-template) .post-title {
 }
 
 .popover:hover .popover-wrapper,
-.popover:active .popover-wrapper {
+.popover:focus .popover-wrapper {
   position: absolute;
   display: block;
   top: -120px;
@@ -2281,11 +2281,6 @@ body:not(.post-template) .post-title {
   transform: translate(-50%, 0);
   cursor: pointer;
   z-index: 10;
-}
-
-.popover:hover img,
-.popover:active img {
-  display: inline !important;
 }
 
 .popover .popover-wrapper:before,
