@@ -2260,12 +2260,15 @@ body:not(.post-template) .post-title {
   background-color: #44b549;
 }
 
+.popover {
+  position: relative;
+}
+
 .popover .popover-wrapper {
   display: none;
 }
 
 .popover:hover .popover-wrapper,
-.popover:focus .popover-wrapper,
 .popover:active .popover-wrapper {
   position: absolute;
   display: block;
@@ -2276,11 +2279,11 @@ body:not(.post-template) .post-title {
   border-radius: 3px;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
+  cursor: pointer;
   z-index: 10;
 }
 
 .popover:hover img,
-.popover:focus img,
 .popover:active img {
   display: inline !important;
 }
