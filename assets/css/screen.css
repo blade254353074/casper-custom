@@ -2577,3 +2577,9 @@ div.prism-show-language > div.prism-show-language-label {
   display: none;
   visibility: hidden;
 }
+
+/*  响应式表格 */
+.responsible-table {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
