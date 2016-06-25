@@ -2580,6 +2580,11 @@ div.prism-show-language > div.prism-show-language-label {
 
 /*  响应式表格 */
 .responsible-table {
+  margin: 1.75em 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.responsible-table table {
+  margin: 0;
 }
