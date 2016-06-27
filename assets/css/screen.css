@@ -946,7 +946,7 @@ body.nav-opened .nav {
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft Yahei",sans-serif;
     color: #fff;
 }
 
@@ -955,7 +955,7 @@ body.nav-opened .nav {
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: "Merriweather","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft Yahei",serif;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
