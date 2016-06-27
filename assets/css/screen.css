@@ -2240,7 +2240,7 @@ pre[class*="language-"] {
     color: black;
     background: none;
     text-shadow: 0 1px white;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft Yahei";
     text-align: left;
     white-space: pre;
     word-spacing: normal;
