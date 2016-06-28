@@ -1,0 +1,113 @@
+/* Customize */
+
+[class^="svg-icon"]:before,
+[class*=" svg-icon"]:before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: #bbc7cc;
+  vertical-align: text-top;
+  transition: background 0.3s ease;
+  speak: none;
+}
+
+.svg-icon-weibo:before {
+  -webkit-mask: url(../imgs/weibo.svg) center/cover no-repeat;
+  mask: url(../imgs/weibo.svg) center/cover no-repeat;
+}
+
+.svg-icon-weixin:before {
+  -webkit-mask: url(../imgs/weixin.svg) center/cover no-repeat;
+  mask: url(../imgs/weixin.svg) center/cover no-repeat;
+}
+
+.svg-icon-weibo:hover:before {
+  background-color: #e6162d;
+}
+
+.svg-icon-weixin:hover:before {
+  background-color: #44b549;
+}
+
+.popover {
+  position: relative;
+}
+
+.popover .popover-wrapper {
+  display: none;
+}
+
+.popover:hover .popover-wrapper,
+.popover:focus .popover-wrapper {
+  position: absolute;
+  display: block;
+  top: -120px;
+  left: 50%;
+  background: #fff;
+  border: 1px solid #bbc7cc;
+  border-radius: 3px;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.popover .popover-wrapper:before,
+.popover .popover-wrapper:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-width: 6px 6px 0 6px;
+  border-color: #fff rgba(0, 0, 0, 0);
+  border-style: solid;
+  z-index: 10;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.popover .popover-wrapper:after {
+  bottom: -7px;
+  border-width: 7px 7px 0 7px;
+  border-color: #bbc7cc rgba(0, 0, 0, 0);
+  z-index: 9;
+}
+
+.share-qrcode {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.share-qrcode img {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* 防爬虫 */
+
+.stop-spider {
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+}
+
+
+/*  响应式表格 */
+
+.responsible-table {
+  margin: 1.75em 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsible-table table {
+  margin: 0;
+}
