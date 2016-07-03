@@ -31,18 +31,6 @@
 @font-face {
   font-family: 'Merriweather';
   font-style: normal;
-  font-weight: 400;
-  /* IE6-8 compat */
-  src: url("../fonts/merriweather-31e8cf6da3e7b8522c258e70763367566c0a9e59.eot");
-  src: local("Merriweather"),
-    local("Merriweather-Regular"),
-    url("../fonts/merriweather-9b417797cbaf524d49c2112fca26e16fa52ca42e.svg#Merriweather") format("svg"),
-    url("../fonts/merriweather-31e8cf6da3e7b8522c258e70763367566c0a9e59.eot") format("embedded-opentype");
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
   font-weight: 700;
   src: local("Merriweather Bold"),
     local("Merriweather-Bold"),
