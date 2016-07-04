@@ -57,6 +57,7 @@
 
 /* 自定义脚本 */
 (function(win, doc) {
+  var scrollHeight = win.scrollY + doc.body.clientHeight
   var container = doc.head || doc.body
   var dsLink = '//static.duoshuo.com/embed.js'
   var disqusLink = '//sebastianblade.disqus.com/embed.js'
@@ -84,7 +85,8 @@
     container.appendChild(createScript(disqusLink))
   }
 
-  if (win.scrollY > dsTop || win.scrollY > disqusTop) {
+  // console.log(scrollHeight, dsTop, disqusTop)
+  if (scrollHeight > dsTop || scrollHeight > disqusTop) {
     dsLoading()
     disqusLoading()
   } else {
