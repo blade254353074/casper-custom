@@ -65,7 +65,7 @@
 
   function createScript (src) {
     var script = doc.createElement('script')
-    script = 'text/javascript'
+    script.type = 'text/javascript'
     script.async = true
     script.charset = 'UTF-8'
     script.src = src
