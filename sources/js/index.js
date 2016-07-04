@@ -57,30 +57,29 @@
 
 /* 自定义脚本 */
 (function() {
-  var dsTop = $('#ds-thread')[0].offsetTop
+  var container = d.head || d.body
+  var dsTop = $('.ds-thread')[0].offsetTop
   var disqusTop = $('#disqus_thread')[0].offsetTop
   var dsLoaded
   var disqusLoaded
+
+  function createScript (src) {
+    var script = document.createElement('script')
+    script = 'text/javascript'
+    script.async = true
+    script.charset = 'UTF-8'
+    script.src = src
+    return script
+  }
+
   $(window).scroll(function() {
     if (!dsLoaded && this.scrollY > dsTop) {
       dsLoaded = true
-      (function(d) {
-        var ds = d.createElement('script')
-        ds.type = 'text/javascript'
-        ds.async = true
-        ds.src = 'https://static.duoshuo.com/embed.js'
-        ds.charset = 'UTF-8';
-        (d.head || d.body).appendChild(ds);
-      })(document)
+      container.appendChild(createScript('//static.duoshuo.com/embed.js'))
     }
     if (!disqusLoaded && this.scrollY > disqusTop) {
       disqusLoaded = true
-      (function(d) {
-        var s = d.createElement('script')
-        s.async = true
-        s.src = 'https://sebastianblade.disqus.com/embed.js'
-        (d.head || d.body).appendChild(s)
-      })(document)
+      container.appendChild(createScript('//sebastianblade.disqus.com/embed.js'))
     }
   })
 }())
