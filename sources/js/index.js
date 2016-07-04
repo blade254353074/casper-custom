@@ -87,12 +87,15 @@
 
   // console.log(scrollHeight, dsTop, disqusTop)
   if (scrollHeight > dsTop || scrollHeight > disqusTop) {
+    console.log('高度直接大于预定值')
     dsLoading()
     disqusLoading()
   } else {
+    console.log('监听scroll事件')
     $(win).scroll(function() {
-      (!dsLoaded && this.scrollY > dsTop) && dsLoading();
-      (!disqusLoaded && this.scrollY > disqusTop) && disqusLoading()
+      var clientHeight = doc.body.clientHeight
+      ;(!dsLoaded && this.scrollY + clientHeight > dsTop) && dsLoading()
+      ;(!disqusLoaded && this.scrollY + clientHeight > disqusTop) && disqusLoading()
     })
   }
 }(window, document))
