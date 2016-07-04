@@ -58,6 +58,8 @@
 /* 自定义脚本 */
 (function(doc) {
   var container = doc.head || doc.body
+  var dsLink = '//static.duoshuo.com/embed.js'
+  var disqusLink = '//static.duoshuo.com/embed.js'
   var dsTop = $('.ds-thread')[0].offsetTop
   var disqusTop = $('#disqus_thread')[0].offsetTop
   var dsLoaded
@@ -72,14 +74,27 @@
     return script
   }
 
-  $(window).scroll(function() {
-    if (!dsLoaded && this.scrollY > dsTop) {
-      dsLoaded = true
-      container.appendChild(createScript('//static.duoshuo.com/embed.js'))
-    }
-    if (!disqusLoaded && this.scrollY > disqusTop) {
-      disqusLoaded = true
-      container.appendChild(createScript('//sebastianblade.disqus.com/embed.js'))
-    }
-  })
+  function dsLoading () {
+    dsLoaded = true
+    container.appendChild(createScript(dsLink))
+  }
+
+  function disqusLoading () {
+    disqusLoaded = true
+    container.appendChild(createScript(disqusLink))
+  }
+
+  if (window.scrollY > dsTop || window.scrollY > disqusTop) {
+    dsLoading()
+    disqusLoading()
+  } else {
+    $(window).scroll(function() {
+      if (!dsLoaded && this.scrollY > dsTop) {
+        dsLoading()
+      }
+      if (!disqusLoaded && this.scrollY > disqusTop) {
+        disqusLoading()
+      }
+    })
+  }
 }(document))
