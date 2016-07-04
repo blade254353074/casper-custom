@@ -89,9 +89,21 @@
             {{/if}}
 
         </footer>
-        <p>{{id}}</p>
-        <div id="disqus_thread"></div>
-        <script>var disqus_config=function(){this.page={url:'{{@blog.url}}{{url}}',identifier:'{{url}}',title:'{{title}}'}};(function(){var d=document,s=d.createElement('script');s.async=1;s.src='//sebastianblade.disqus.com/embed.js';(d.head||d.body).appendChild(s)})()</script>
+
+        <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{@blog.url}}{{url}}"></div>
+        {{!-- <div id="disqus_thread"></div>
+        <script>var disqus_config=function(){this.page={url:'{{@blog.url}}{{url}}',identifier:'{{url}}',title:'{{title}}'}};(function(){var d=document,s=d.createElement('script');s.async=1;s.src='//sebastianblade.disqus.com/embed.js';(d.head||d.body).appendChild(s)})()</script> --}}
+        <script type="text/javascript">
+        var duoshuoQuery = { short_name:"sebastianblade" };
+        (function(d) {
+            var ds = d.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (d.head || d.body).appendChild(ds);
+        })(document);
+        </script>
 
     </article>
 </main>
