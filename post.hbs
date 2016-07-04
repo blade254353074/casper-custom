@@ -96,8 +96,11 @@
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-    this.page.url = '{{@blog.url}}{{url}}'
-    this.page.identifier = '{{url}}'
+    this.page = {
+        url: '{{@blog.url}}{{url}}',
+        identifier: '{{url}}',
+        title: '{{title}}'
+    }
 }
 (function() {
     var d = document, s = d.createElement('script')
