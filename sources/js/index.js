@@ -56,15 +56,15 @@
 })(jQuery);
 
 /* 自定义脚本 */
-(function() {
-  var container = d.head || d.body
+(function(doc) {
+  var container = doc.head || doc.body
   var dsTop = $('.ds-thread')[0].offsetTop
   var disqusTop = $('#disqus_thread')[0].offsetTop
   var dsLoaded
   var disqusLoaded
 
   function createScript (src) {
-    var script = document.createElement('script')
+    var script = doc.createElement('script')
     script = 'text/javascript'
     script.async = true
     script.charset = 'UTF-8'
@@ -82,4 +82,4 @@
       container.appendChild(createScript('//sebastianblade.disqus.com/embed.js'))
     }
   })
-}())
+}(document))
