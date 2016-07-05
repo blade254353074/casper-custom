@@ -56,8 +56,9 @@
 })(jQuery);
 
 /* 自定义脚本 */
-(function(win, doc) {
-  var $win = $(win)
+setTimeout(function () {
+  var $win = $(window)
+  var doc = document
   var scrollHeight = $win.scrollTop() + $win.height()
   var container = doc.head || doc.body
   var dsLink = '//static.duoshuo.com/embed.js'
@@ -86,17 +87,15 @@
     container.appendChild(createScript(disqusLink))
   }
 
-  // console.log(scrollHeight, dsTop, disqusTop)
   if (scrollHeight > dsTop || scrollHeight > disqusTop) {
-    console.log('高度直接大于预定值')
     dsLoading()
     disqusLoading()
   } else {
-    console.log('监听scroll事件')
-    $(win).scroll(function() {
+    $win.on('scroll', function() {
       var scrollHeight = $win.scrollTop() + $win.height()
       ;(!dsLoaded && scrollHeight > dsTop) && dsLoading()
       ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
+      ;(dsLoaded && disqusLoaded) && $win.off('scroll')
     })
   }
-}(window, document))
+}, 100)
