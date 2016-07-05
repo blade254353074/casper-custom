@@ -57,7 +57,8 @@
 
 /* 自定义脚本 */
 (function(win, doc) {
-  var scrollHeight = win.scrollY + doc.body.clientHeight
+  var docElem = doc.documentElement
+  var scrollHeight = docElem.scrollTop + docElem.clientHeight
   var container = doc.head || doc.body
   var dsLink = '//static.duoshuo.com/embed.js'
   var disqusLink = '//sebastianblade.disqus.com/embed.js'
@@ -93,9 +94,9 @@
   } else {
     console.log('监听scroll事件')
     $(win).scroll(function() {
-      var clientHeight = doc.body.clientHeight
-      ;(!dsLoaded && this.scrollY + clientHeight > dsTop) && dsLoading()
-      ;(!disqusLoaded && this.scrollY + clientHeight > disqusTop) && disqusLoading()
+      var scrollHeight = docElem.scrollTop + docElem.clientHeight
+      ;(!dsLoaded && scrollHeight > dsTop) && dsLoading()
+      ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
     })
   }
 }(window, document))
