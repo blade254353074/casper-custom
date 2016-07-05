@@ -62,8 +62,8 @@
   var container = doc.head || doc.body
   var dsLink = '//static.duoshuo.com/embed.js'
   var disqusLink = '//sebastianblade.disqus.com/embed.js'
-  var dsTop = $('.ds-thread')[0].offsetTop
-  var disqusTop = $('#disqus_thread')[0].offsetTop
+  var dsTop = $('.ds-thread').offset().top
+  var disqusTop = $('#disqus_thread').offset().top
   var dsLoaded
   var disqusLoaded
 
