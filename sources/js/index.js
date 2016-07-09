@@ -65,11 +65,8 @@ setTimeout(function () {
   var doc = document
   var scrollHeight = $win.scrollTop() + $win.height()
   var container = doc.head || doc.body
-  var dsLink = '//static.duoshuo.com/embed.js'
   var disqusLink = '//sebastianblade.disqus.com/embed.js'
-  var dsTop = $('.ds-thread').offset().top
   var disqusTop = $('#disqus_thread').offset().top
-  var dsLoaded
   var disqusLoaded
 
   function createScript (src) {
@@ -81,23 +78,16 @@ setTimeout(function () {
     return script
   }
 
-  function dsLoading () {
-    dsLoaded = true
-    container.appendChild(createScript(dsLink))
-  }
-
   function disqusLoading () {
     disqusLoaded = true
     container.appendChild(createScript(disqusLink))
   }
 
-  if (scrollHeight > dsTop || scrollHeight > disqusTop) {
-    // dsLoading()
+  if (scrollHeight > disqusTop) {
     disqusLoading()
   } else {
     $win.on('scroll', function() {
       var scrollHeight = $win.scrollTop() + $win.height()
-      // ;(!dsLoaded && scrollHeight > dsTop) && dsLoading()
       ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
       disqusLoaded && $win.off('scroll')
     })
