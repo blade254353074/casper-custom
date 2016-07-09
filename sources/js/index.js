@@ -56,6 +56,10 @@
 })(jQuery);
 
 /* 自定义脚本 */
+/*
+  Reload、超出高度都可以触发，但从别处点击链接进入，
+  dsTop/disqusTop 会不正常，所以延迟 100 毫秒。
+*/
 setTimeout(function () {
   var $win = $(window)
   var doc = document
@@ -88,14 +92,14 @@ setTimeout(function () {
   }
 
   if (scrollHeight > dsTop || scrollHeight > disqusTop) {
-    dsLoading()
+    // dsLoading()
     disqusLoading()
   } else {
     $win.on('scroll', function() {
       var scrollHeight = $win.scrollTop() + $win.height()
-      ;(!dsLoaded && scrollHeight > dsTop) && dsLoading()
+      // ;(!dsLoaded && scrollHeight > dsTop) && dsLoading()
       ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
-      ;(dsLoaded && disqusLoaded) && $win.off('scroll')
+      disqusLoaded && $win.off('scroll')
     })
   }
 }, 100)
