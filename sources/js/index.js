@@ -65,7 +65,7 @@ setTimeout(function () {
   var doc = document
   var scrollHeight = $win.scrollTop() + $win.height()
   var container = doc.head || doc.body
-  var disqusLink = '//sebastianblade.disqus.com/embed.js'
+  var disqusLink = '/assets/js/disqus.embed.min.js'
   var disqusTop = $('#disqus_thread').offset().top
   var disqusLoaded
 

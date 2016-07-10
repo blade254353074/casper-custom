@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "scss": "node-sass sources/scss/screen.scss -x -q --output-style compressed > assets/css/screen.css",
-    "uglify": "uglifyjs sources/js/libs.js sources/js/index.js --compress --mangle --screw-ie8 > assets/js/index.min.js",
+    "uglify:index": "uglifyjs sources/js/libs.js sources/js/index.js --compress --mangle --screw-ie8 > assets/js/index.min.js",
+    "uglify:disqus": "uglifyjs sources/js/disqus.embed.js --compress --mangle --screw-ie8 > assets/js/disqus.embed.min.js",
+    "uglify": "npm run uglify:index & npm run uglify:disqus",
     "build": "npm run scss & npm run uglify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
