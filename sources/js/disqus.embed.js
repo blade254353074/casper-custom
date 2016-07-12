@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     'use strict';
     var _config = window.disqus_config;
     window.disqus_config = function () {
