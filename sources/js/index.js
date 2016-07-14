@@ -60,36 +60,40 @@
   Reload、超出高度都可以触发，但从别处点击链接进入，
   dsTop/disqusTop 会不正常，所以延迟 100 毫秒。
 */
-setTimeout(function () {
-  var $win = $(window)
-  var doc = document
-  var scrollHeight = $win.scrollTop() + $win.height()
-  var container = doc.head || doc.body
-  var disqusLink = '//sebastianblade.disqus.com/embed.js'
-  var disqusTop = $('#disqus_thread').offset().top
-  var disqusLoaded
-
-  function createScript (src) {
-    var script = doc.createElement('script')
-    script.type = 'text/javascript'
-    script.async = true
-    script.charset = 'UTF-8'
-    script.src = src
-    return script
-  }
-
-  function disqusLoading () {
-    disqusLoaded = true
-    container.appendChild(createScript(disqusLink))
-  }
-
-  if (scrollHeight > disqusTop) {
-    disqusLoading()
-  } else {
-    $win.on('scroll', function() {
+$(function () {
+  if ($('body').hasClass('post-template')) {
+    setTimeout(function () {
+      var $win = $(window)
+      var doc = document
       var scrollHeight = $win.scrollTop() + $win.height()
-      ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
-      disqusLoaded && $win.off('scroll')
-    })
+      var container = doc.head || doc.body
+      var disqusLink = '//sebastianblade.disqus.com/embed.js'
+      var disqusTop = $('#disqus_thread').offset().top
+      var disqusLoaded
+
+      function createScript (src) {
+        var script = doc.createElement('script')
+        script.type = 'text/javascript'
+        script.async = true
+        script.charset = 'UTF-8'
+        script.src = src
+        return script
+      }
+
+      function disqusLoading () {
+        disqusLoaded = true
+        container.appendChild(createScript(disqusLink))
+      }
+
+      if (scrollHeight > disqusTop) {
+        disqusLoading()
+      } else {
+        $win.on('scroll', function() {
+          var scrollHeight = $win.scrollTop() + $win.height()
+          ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
+          disqusLoaded && $win.off('scroll')
+        })
+      }
+    }, 100)
   }
-}, 100)
+})
