@@ -177,3 +177,12 @@
 .post-footer .share .icon-google-plus:hover {
   color: #dd4b39;
 }
+
+.post-content {
+  a {
+    color: #2196F3;
+    &:hover {
+      color: #03A9F4;
+    }
+  }
+}
