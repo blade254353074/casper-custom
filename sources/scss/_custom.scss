@@ -112,10 +112,12 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.responsible-table table {
-  margin: 0;
-  font-size: 1.4rem;
-  text-rendering: auto;
+  table {
+    margin: 0;
+    font-size: 1.4rem;
+    text-rendering: auto;
+    td, th {
+      white-space: nowrap;
+    }
+  }
 }
