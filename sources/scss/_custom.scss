@@ -104,10 +104,18 @@
 
 .responsible-table {
   margin: 1.75em 0;
+  width: 100%;
+  min-height: .01%;
+  border: 1px solid #EFEFEF;
+  border-width: 0 1px 1px;
   overflow: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .responsible-table table {
   margin: 0;
+  font-size: 1.4rem;
+  text-rendering: auto;
 }
