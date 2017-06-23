@@ -367,3 +367,11 @@ button {
   border: rgba(0, 0, 0, 0.05) 0.1em solid;
   background: #5ba4e5;
 }
+
+summary {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
