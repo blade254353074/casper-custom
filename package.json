@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "scss": "node-sass sources/scss/screen.scss -x -q --output-style compressed > assets/css/screen.css",
-    "uglify:index": "uglifyjs sources/js/libs.js sources/js/index.js --compress --mangle --screw-ie8 > assets/js/index.min.js",
-    "uglify:disqus": "uglifyjs sources/js/disqus.embed.js --compress --mangle --screw-ie8 > assets/js/disqus.embed.min.js",
-    "uglify": "npm run uglify:index",
+    "uglify": "uglifyjs sources/js/index.js --compress --mangle --output assets/js/index.min.js -- sources/js/libs.js",
     "build": "npm run scss & npm run uglify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,7 +26,9 @@
   },
   "homepage": "https://github.com/blade254353074/casper-custom#readme",
   "dependencies": {
-    "node-sass": "^3.10.0",
-    "uglifyjs": "^2.4.10"
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.0.19"
   }
 }
