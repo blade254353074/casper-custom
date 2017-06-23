@@ -4,7 +4,7 @@
   "description": "The default theme for [Ghost](http://github.com/tryghost/ghost/).",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass sources/scss/screen.scss -x -q --output-style compressed > assets/css/screen.css",
+    "scss": "node-sass sources/scss/screen.scss -q --output-style compressed > assets/css/screen.css",
     "uglify": "uglifyjs sources/js/index.js --compress --mangle --output assets/js/index.min.js -- sources/js/libs.js",
     "build": "npm run scss & npm run uglify",
     "test": "echo \"Error: no test specified\" && exit 1"
