@@ -29,8 +29,19 @@
 /* iframe runner */
 
 .iframe-runner-wrapper {
-  margin: 16px 0;
   position: relative;
+  width: 100%;
+  margin: 16px 0;
+  padding-top: 62.5%;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   &.running {
     &:before,
