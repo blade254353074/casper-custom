@@ -56,12 +56,13 @@
 })(jQuery);
 
 /* 自定义脚本 */
-/*
-  Reload、超出高度都可以触发，但从别处点击链接进入，
-  dsTop/disqusTop 会不正常，所以延迟 100 毫秒。
-*/
 $(function () {
+  // 文章页面
   if ($('body').hasClass('post-template')) {
+    /*
+      Reload、超出高度都可以触发，但从别处点击链接进入，
+      dsTop/disqusTop 会不正常，所以延迟 100 毫秒。
+    */
     setTimeout(function () {
       var $win = $(window)
       var doc = document
@@ -88,12 +89,30 @@ $(function () {
       if (scrollHeight > disqusTop) {
         disqusLoading()
       } else {
-        $win.on('scroll', function() {
+        $win.on('scroll', function () {
           var scrollHeight = $win.scrollTop() + $win.height()
           ;(!disqusLoaded && scrollHeight > disqusTop) && disqusLoading()
           disqusLoaded && $win.off('scroll')
         })
       }
     }, 100)
+
+    /*
+     * 可播放 iframe，模板如下
+     * <div class="iframe-runner-wrapper">
+     *   <iframe width="100%" height="310" data-src="src" allowfullscreen frameborder="0"></iframe>
+     * </div>
+     */
+    $('.iframe-runner-wrapper').on('click', function () {
+      var $this = $(this)
+      var isRunning = $this.data('running')
+
+      if (isRunning) return
+
+      var $iframe = $this.children('iframe')
+      $iframe.attr('src', $iframe.data('src'))
+      $this.data('running', true)
+        .addClass('running')
+    })
   }
 })
