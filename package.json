@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/blade254353074/casper-custom#readme",
   "dependencies": {
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {
     "uglify-js": "^3.0.19"
